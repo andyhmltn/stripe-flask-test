@@ -7,8 +7,8 @@ Getting Started
 =====================
 First, you need to import the database:
 
-	sqlite3 /tmp/payments.db < schema.sql
+	sqlite3 config/db/payments.db < config/db/schema.sql
 
-Next, rename `config.py.sample` to `config.py` and edit to your liking.
+Next rename `config/settings.py.sample` to `config/settings.py` and edit to your liking.
 
 Then just run `python main.py`... Enjoy!

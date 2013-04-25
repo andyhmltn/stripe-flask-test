@@ -5,7 +5,7 @@ from flask import *
 
 # Initialise Application
 app = Flask(__name__)
-app.config.from_pyfile('config.py')
+app.config.from_pyfile('config/settings.py')
 
 def connect_db():
 	return sqlite3.connect(app.config['DATABASE'])

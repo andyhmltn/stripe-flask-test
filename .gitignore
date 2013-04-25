@@ -1,1 +1,2 @@
-config.py
+config/settings.py
+config/db/payments.db

@@ -1,5 +1,5 @@
 # Configuration
-DATABASE   = '/tmp/payments.db'
+DATABASE   = 'config/db/payments.db'
 DEBUG      = True
 SECRET_KEY = 'secretdevkey'
 USERNAME   = 'admin'
