@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+	<h1>Adding payment for {{customer.first_name}} {{customer.last_name}}</h1>
+
+	<form action="{{url_for('create_payment')}}" method="post">
+		<dl>
+			<dt>Amount:</dt>
+			<dd><input type="number" name="amount"></dd>
+
+			<dt>Description:</dt>
+			<dd><input type="text" name="description"></dd>
+
+			<input type="hidden" name="customer_id" value="{{customer.id}}">
+			<dd><input type="submit"></dd>
+		</dl>
+	</form>
+
+	<ul class="payments">
+		{% for payment in payments %}
+			<li>Payment for £{{payment.amount / 100}} (Charge ID: {{payment.charge_id}})</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

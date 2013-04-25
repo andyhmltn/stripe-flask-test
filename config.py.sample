@@ -1,0 +1,7 @@
+# Configuration
+DATABASE   = '/tmp/payments.db'
+DEBUG      = True
+SECRET_KEY = 'secretdevkey'
+USERNAME   = 'admin'
+PASSWORD   = 'default'
+STRIPE_API_KEY = 'YOURAPIKEY'

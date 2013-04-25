@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+	<form action="{{url_for('add_customer')}}" method="post">
+		<dl>
+			<dt>First Name:</dt>
+			<dd><input type="text" name="first_name"></dd>
+
+			<dt>Last Name:</dt>
+			<dd><input type="text" name="last_name"></dd>
+
+			<dd><input type="submit"></dd>
+		</dl>
+	</form>
+
+	<ul class="customers">
+		{% for customer in customers %}
+			<li><h2>{{customer.first_name}} {{customer.last_name}} <a href="/customers/{{customer.id}}/payments/add">View Payments</a></h2></li>
+		{% endfor %}
+	</ul>
+{% endblock %}
