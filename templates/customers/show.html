@@ -14,7 +14,7 @@
 
 	<ul class="customers">
 		{% for customer in customers %}
-			<li><h2>{{customer.first_name}} {{customer.last_name}} <a href="/customers/{{customer.id}}/payments/add">View Payments</a></h2></li>
+			<li><h2>{{customer.first_name}} {{customer.last_name}} <a href="/customers/{{customer.id}}/payments">View Payments</a></h2></li>
 		{% endfor %}
 	</ul>
 {% endblock %}

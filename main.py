@@ -33,7 +33,7 @@ def show_customers():
 	cur = g.db.execute('select id, first_name, last_name from customers')
 	customers = [dict(first_name=row[0], last_name=row[1]) for row in cur.fetchall()]
 
-	return render_template('show_customers.html', customers=customers)
+	return render_template('customers/show.html', customers=customers)
 
 @app.route('/customers/add', methods=['POST'])
 def add_customer():
