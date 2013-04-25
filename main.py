@@ -85,7 +85,7 @@ def create_payment():
 
 			flash('Payment charge succesful')
 
-			return redirect(url_for('show_customers'))
+			return redirect('/customers/'+str(customer['id'])+'/payments')
 		else:
 			print "There was an error processing the payment. Please try again"
 
