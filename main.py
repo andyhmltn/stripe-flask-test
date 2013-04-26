@@ -27,9 +27,16 @@ import stripe
 
 from flask import *
 
-# Initialise Application
+##
+# Start up the Application
+##
+
 app = Flask(__name__)
 app.config.from_pyfile('config/settings.py')
+
+##
+# Common database operations
+##
 
 def connect_db():
 	return sqlite3.connect(app.config['DATABASE'])
@@ -40,6 +47,10 @@ def query_db(query, args=(), one=False):
 			for idx, value in enumerate(row)) for row in cur.fetchall()]
 	return (rv[0] if rv else None)
 
+##
+# Request before/after filters
+##
+
 @app.before_request
 def before_request():
 	g.db = connect_db()
@@ -47,6 +58,10 @@ def before_request():
 @app.teardown_request
 def teardown_request(exception):
 	g.db.close()
+
+##
+# Application Code
+##
 
 @app.route('/')
 def index_action():
