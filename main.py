@@ -109,7 +109,6 @@ def create_payment():
 			currency = "gbp",
 			card     = {
 				'number':4242424242424242,
-				'number':4242424242424242,
 				'exp_month':'12',
 				'exp_year':'13',
 				'cvc':'123',
